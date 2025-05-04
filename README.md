@@ -3,7 +3,7 @@
 - 11 New Main Weapons, with 2nd and 3rd kits
 - 23 3rd kits for existing Main Weapons that never got them (24 if you count E-Liter Scope seperately)
 - 2 fully original custom stages: Ganges Galleria and Takifugu Crossing
-- 48 New ink colour sets (All ink colour sets from [S1](https://splatoonwiki.org/wiki/Ink/Splatoon) + [S2](https://splatoonwiki.org/wiki/Ink/Splatoon_2), + some custom ones) (8 are exclusive to Tricolor Turf War)
+- 48 New ink colour sets (All multiplayer ink colour sets from [S1](https://splatoonwiki.org/wiki/Ink/Splatoon) + [S2](https://splatoonwiki.org/wiki/Ink/Splatoon_2), + some custom ones) (8 are exclusive to Tricolor Turf War)
 
 ## <ins>**3rd Kits:**</ins>
 ### <ins>**Shooters:**</ins>
