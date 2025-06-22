@@ -2,8 +2,7 @@
 <head>
 <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
 <style>
-body {background-color: '#181818';}
-body {font-family: 'Audiowide';font-size: 22px;}
+body {background-color: '#181818'; font-family: 'Audiowide';font-size: 22px;}
 </style>
 </head>
 <body>
