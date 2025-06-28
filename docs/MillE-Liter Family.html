@@ -16,6 +16,9 @@
   a:hover {color: #000063;background-color: transparent;text-decoration: underline;}
   a:active {color: #000063;background-color: transparent;text-decoration: underline;}
   table{border: 3px #ffffff;border-radius: 10px;}
+  progress::-moz-progress-bar { background: #F9C700; }
+  progress::-webkit-progress-value { background: #F9C700; }
+  progress { color: #F9C700; }
 </style>
 </head>
 <body>
@@ -27,15 +30,33 @@
   <table class="center" style="text-align:right;padding-left: 15px;font-size: 30px;">
       <tr>
         <td>Range:</td>
-        <td><progress id="range" max="100" value="90" color:"#F9C700"></progress></td>
+        <td><progress id="range" max="100" value="90"></progress></td>
       </tr>
       <tr>
         <td>Damage:</td>
-        <td><progress id="range" max="100" value="90" color:"#F9C700"></progress></td>
+        <td><progress id="range" max="100" value="90"></progress></td>
       </tr>
       <tr>
         <td>Fire Rate:</td>
-        <td><progress id="range" max="100" value="5" color:"#F9C700"></progress></td>
+        <td><progress id="range" max="100" value="5"></progress></td>
+      </tr>
+    </table>
+    <table class="center" style="text-align:right;padding-left: 15px;font-size: 30px; background-color: #000000;">
+      <tr style="font-family:'cut_deepregular';">
+        <td>Damage:</td>
+        <td>Fire Rate:</progress></td>
+      </tr>
+      <tr>
+        <td style="color:#31C731;">MillE-Liter: 80</td>        
+        <td style="color:#950000;">52 Gal.: 6.67/s</td>
+      </tr>
+      <tr>
+        <td style="color:#009500;">96 Gal.: 62</td>      
+        <td style="color:#950000;">96 Gal.: 5/s</td>
+      </tr>
+      <tr>
+        <td style="color:#009500;">52 Gal.: 52</td>      
+        <td style="color:#C73131;">MillE-Liter.: 3/s</td>
       </tr>
     </table>
   
