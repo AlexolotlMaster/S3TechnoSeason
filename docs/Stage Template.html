@@ -1,6 +1,7 @@
 <html>
 <head>
   <link href='stylesheet.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   body {background-color: #636363;color: #000063;font-family: 'blissful_thinkingregular';font-size: 25px;text-align: center;}
   img {width: 100%;}
@@ -16,50 +17,188 @@
   a:hover {color: #000063;background-color: transparent;text-decoration: underline;}
   a:active {color: #000063;background-color: transparent;text-decoration: underline;}
   table{border: 3px #ffffff;border-radius: 10px;}
+  .button {border:2px solid;border-radius:5px;background-color:#636363;color:#000031;width:100px;height:50px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;transition-duration:0.4s;cursor:pointer;}
+  .button:hover {border:2px solid #000031;background-color:#000031;color:#f9c700;}
+  @media screen and (min-width: 1000px) {.pad {padding-left:256}}
+  @media screen and (max-width: 1000px) {.pad {padding-left:128}}
 </style>
 </head>
 <body>
   
-  <h1 style="font-family:'cut_deepregular';font-size:100px;">Stage Name</h1>
-  <video fixed loop autoplay muted style="float:right;"><source src="Resources/Videos/Stages/[STAGE NAME] Overview.mp4" type="video/mp4"></video>
-  <p>this will eventually be the weapon's description</p>
+  <h1 class="center" style="font-family:'cut_deepregular';font-size:100px;">Bivalve Fortress</h1>
+  <video fixed loop autoplay muted style="float:right;"><source src="Resources/Videos/Stages/Bivalve Fortress Overview.mp4" type="video/mp4"></video>
+  <p>this will eventually be the stage's description</p>
   <hr>
   <p style="font-family:'cut_deepregular';font-size:50px;">Maps</p>
-  <table class="center" style="text-align:center;padding-left: 15px">
+  <table class="center" style="text-align:center;">
     <tr>
-      <td><img src="Resources/Images/Stages/Minimaps/[STAGE NAME] Turf War Base.png" alt="[STAGE NAME]'s Turf War Layout" style="width:455px;"></td>
-      <td><img src="Resources/Images/Stages/Minimaps/[STAGE NAME] Splat Zones Base.png" alt="[STAGE NAME]'s Splat Zones Layout" style="width:455px;"></td>
+      <td colspan='12'> <p style="font-family:'cut_deepregular';font-size:40px;">Turf War</p></td>
+      <td colspan='12' class="pad"> <p style="font-family:'cut_deepregular';font-size:40px;">Splat Zones</p></td>
     </tr>
     <tr>
-      <td><img src="Resources/Images/Stages/Minimaps/[STAGE NAME] Tower Control Base.png" alt="[STAGE NAME]'s Tower Control Layout" style="width:455px;"></td>
-      <td><img src="Resources/Images/Stages/Minimaps/[STAGE NAME] Rainmaker Base.png" alt="[STAGE NAME]'s Rainmaker Layout" style="width:455px;"></td>
+      <td colspan='12'>
+        <div style="position:relative;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Turf War Base.png" alt="Bivalve Fortress' Turf War Layout" style="width:455px;">
+        <div id="TWObjects" style="position:absolute;top:0px;z-index:1;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Turf War Objects.png" alt="Bivalve Fortress' Turf War Layout's Objects" style="width:455px;">
+        </div>
+        <div id="TWRails" style="position:absolute;top:0px;z-index:2;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Turf War Rails.png" alt="Bivalve Fortress' Turf War Layout's Inkrails" style="width:455px;">
+        </div>
+        <div id="TWSpawns" style="position:absolute;top:0px;z-index:3;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Turf War Spawns.png" alt="Bivalve Fortress' Turf War Layout's Spawns" style="width:455px;">
+        </div>
+        </div>
+      </td>
+      <td colspan='12' class="pad">
+        <div style="position:relative;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Splat Zones Base.png" alt="Bivalve Fortress' Splat Zones Layout" style="width:455px;">
+        <div id="SZObjects" style="position:absolute;top:0px;z-index:1;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Splat Zones Objects.png" alt="Bivalve Fortress' Splat Zones Layout's Objects" style="width:455px;">
+        </div>
+        <div id="SZRails" style="position:absolute;top:0px;z-index:2;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Splat Zones Rails.png" alt="Bivalve Fortress' Splat Zones Layout's Inkrails" style="width:455px;">
+        </div>
+        <div id="SZSpawns" style="position:absolute;top:0px;z-index:3;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Splat Zones Spawns.png" alt="Bivalve Fortress' Splat Zones Layout's Spawns" style="width:455px;">
+        </div>
+        <div id="SZObjective" style="position:absolute;top:0px;z-index:4;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Splat Zones Objective.png" alt="Bivalve Fortress' Splat Zones Layout's Objective" style="width:455px;">
+        </div>
+        </div>
+      </td>
     </tr>
     <tr>
-      <td><img src="Resources/Images/Stages/Minimaps/[STAGE NAME] Clam Blitz Base.png" alt="[STAGE NAME]'s Clam Blitz Layout" style="width:455px;"></td>
-      <td><img src="Resources/Images/Stages/Minimaps/[STAGE NAME] Tricolor Turf War Base.png" alt="[STAGE NAME]'s Tricolor Turf War Layout" style="width:455px;"></td>
+      <td colspan='4'><button class="button" onclick="twobjects()">Toggle<br>Objects</button></td>
+      <td colspan='4'><button class="button" onclick="twrails()">Toggle<br>Inkrails</button></td>
+      <td colspan='4'><button class="button" onclick="twspawns()">Toggle<br>Spawns</button></td>
+      <td colspan='3' class="pad"><button class="button" onclick="szobjects()">Toggle<br>Objects</button></td>
+      <td colspan='3'><button class="button" onclick="szrails()">Toggle<br>Inkrails</button></td>
+      <td colspan='3'><button class="button" onclick="szspawns()">Toggle<br>Spawns</button></td>
+      <td colspan='3'><button class="button" onclick="szobjective()">Toggle<br>Objective</button></td>
+    </tr>
+    <tr>
+      <td colspan='12' style="padding-top:64"> <p style="font-family:'cut_deepregular';font-size:40px;">Tower Control</p></td>
+      <td colspan='12' class="pad" style="padding-top:64"> <p style="font-family:'cut_deepregular';font-size:40px;">Rainmaker</p></td>
+    </tr>
+    <tr>
+      <td colspan='12'>
+        <div style="position:relative;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Tower Control Base.png" alt="Bivalve Fortress' Tower Control Layout" style="width:455px;">
+        <div id="TCObjects" style="position:absolute;top:0px;z-index:1;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Tower Control Objects.png" alt="Bivalve Fortress' Tower Control Layout's Objects" style="width:455px;">
+        </div>
+        <div id="TCRails" style="position:absolute;top:0px;z-index:2;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Tower Control Rails.png" alt="Bivalve Fortress' Tower Control Layout's Inkrails" style="width:455px;">
+        </div>
+        <div id="TCSpawns" style="position:absolute;top:0px;z-index:3;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Tower Control Spawns.png" alt="Bivalve Fortress' Tower Control Layout's Spawns" style="width:455px;">
+        </div>
+        <div id="TCObjective" style="position:absolute;top:0px;z-index:4;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Tower Control Objective.png" alt="Bivalve Fortress' Tower Control Layout's Objective" style="width:455px;">
+        </div>
+        </div>
+      </td>
+      <td colspan='12' class="pad">
+        <div style="position:relative;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Rainmaker Base.png" alt="Bivalve Fortress' Rainmaker Layout" style="width:455px;">
+        <div id="RMObjects" style="position:absolute;top:0px;z-index:1;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Rainmaker Objects.png" alt="Bivalve Fortress' Rainmaker Layout's Objects" style="width:455px;">
+        </div>
+        <div id="RMRails" style="position:absolute;top:0px;z-index:2;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Rainmaker Rails.png" alt="Bivalve Fortress' Rainmaker Layout's Inkrails" style="width:455px;">
+        </div>
+        <div id="RMSpawns" style="position:absolute;top:0px;z-index:3;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Rainmaker Spawns.png" alt="Bivalve Fortress' Rainmaker Layout's Spawns" style="width:455px;">
+        </div>
+        <div id="RMObjective" style="position:absolute;top:0px;z-index:4;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Rainmaker Objective.png" alt="Bivalve Fortress' Rainmaker Layout's Objective" style="width:455px;">
+        </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan='3'><button class="button" onclick="tcobjects()">Toggle<br>Objects</button></td>
+      <td colspan='3'><button class="button" onclick="tcrails()">Toggle<br>Inkrails</button></td>
+      <td colspan='3'><button class="button" onclick="tcspawns()">Toggle<br>Spawns</button></td>
+      <td colspan='3'><button class="button" onclick="tcobjective()">Toggle<br>Objective</button></td>
+      <td colspan='3' class="pad"><button class="button" onclick="rmobjects()">Toggle<br>Objects</button></td>
+      <td colspan='3'><button class="button" onclick="rmrails()">Toggle<br>Inkrails</button></td>
+      <td colspan='3'><button class="button" onclick="rmspawns()">Toggle<br>Spawns</button></td>
+      <td colspan='3'><button class="button" onclick="rmobjective()">Toggle<br>Objective</button></td>
+    </tr>
+    <tr>
+      <td colspan='12' style="padding-top:64"> <p style="font-family:'cut_deepregular';font-size:40px;">Clam Blitz</p></td>
+      <td colspan='12' class="pad" style="padding-top:64"> <p style="font-family:'cut_deepregular';font-size:40px;">Tricolor Turf War</p></td>
+    </tr>
+    <tr>
+      <td colspan='12'>
+        <div style="position:relative;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Clam Blitz Base.png" alt="Bivalve Fortress' Clam Blitz Layout" style="width:455px;">
+        <div id="CBObjects" style="position:absolute;top:0px;z-index:1;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Clam Blitz Objects.png" alt="Bivalve Fortress' Clam Blitz Layout's Objects" style="width:455px;">
+        </div>
+        <div id="CBRails" style="position:absolute;top:0px;z-index:2;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Clam Blitz Rails.png" alt="Bivalve Fortress' Clam Blitz Layout's Inkrails" style="width:455px;">
+        </div>
+        <div id="CBSpawns" style="position:absolute;top:0px;z-index:3;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Clam Blitz Spawns.png" alt="Bivalve Fortress' Clam Blitz Layout's Spawns" style="width:455px;">
+        </div>
+        <div id="CBObjective" style="position:absolute;top:0px;z-index:4;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Clam Blitz Objective.png" alt="Bivalve Fortress' Clam Blitz Layout's Objective" style="width:455px;">
+        </div>
+        </div>
+      </td>
+      <td colspan='12' class="pad">
+        <div style="position:relative;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Tricolor Turf War Base.png" alt="Bivalve Fortress' Tricolor Turf War Layout" style="width:455px;">
+        <div id="TTWObjects" style="position:absolute;top:0px;z-index:1;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Tricolor Turf War Objects.png" alt="Bivalve Fortress' Tricolor Turf War Layout's Objects" style="width:455px;">
+        </div>
+        <div id="TTWRails" style="position:absolute;top:0px;z-index:2;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Tricolor Turf War Rails.png" alt="Bivalve Fortress' Tricolor Turf War Layout's Inkrails" style="width:455px;">
+        </div>
+        <div id="TTWSpawns" style="position:absolute;top:0px;z-index:3;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Tricolor Turf War Spawns.png" alt="Bivalve Fortress' Tricolor Turf War Layout's Spawns" style="width:455px;">
+        </div>
+        <div id="TTWObjective" style="position:absolute;top:0px;z-index:4;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Tricolor Turf War Objective.png" alt="Bivalve Fortress' Tricolor Turf War Layout's Objective" style="width:455px;">
+        </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan='3'><button class="button" onclick="cbobjects()">Toggle<br>Objects</button></td>
+      <td colspan='3'><button class="button" onclick="cbrails()">Toggle<br>Inkrails</button></td>
+      <td colspan='3'><button class="button" onclick="cbspawns()">Toggle<br>Spawns</button></td>
+      <td colspan='3'><button class="button" onclick="cbobjective()">Toggle<br>Objective</button></td>
+      <td colspan='3' class="pad"><button class="button" onclick="ttwobjects()">Toggle<br>Objects</button></td>
+      <td colspan='3'><button class="button" onclick="ttwrails()">Toggle<br>Inkrails</button></td>
+      <td colspan='3'><button class="button" onclick="ttwspawns()">Toggle<br>Spawns</button></td>
+      <td colspan='3'><button class="button" onclick="ttwobjective()">Toggle<br>Objective</button></td>
     </tr>
   </table>
 
-  <button class="collapsible"><a href="Weapons.html">Stages</a></button>
+  <button class="collapsible center"><a href="Stages.html">Stages</a></button>
   <div class="content">
-    <table class="center" style="text-align:Center;padding-left: 15px;font-size: 30px;color:#636363;">
+    <table class="center" style="text-align:Center;font-size: 30px;color:#636363;">
       <tr>
         <td><a href="Bivalve Fortress.html"><img src="Resources/Images/Stages/Icons/Bivalve Fortress.png" alt="Bivalve Fortress' Icon" style="width:228px;height:128px;"></a></td>
-        <td><a href="Coelacanth Castle.html"><img src="Resources/Images/Stages/Icons/Coelacanth Castle.png" alt="Coelacanth Castle's Icon" style="width:228px;height:128px;"></a></td>
-        <td><a href="Ganges Galleria.html"><img src="Resources/Images/Stages/Icons/Ganges Galleria.png" alt="Ganges Galleria's Icon" style="width:228px;height:128px;"></a></td>
-        <td><a href="Takifugu Crossing.html"><img src="Resources/Images/Stages/Icons/Takifugu Crossing.png" alt="Takifugu Crossing's Icon" style="width:228px;height:128px;"></a></td>
+        <td style="padding-left: 15px;"><a href="Coelacanth Castle.html"><img src="Resources/Images/Stages/Icons/Coelacanth Castle.png" alt="Coelacanth Castle's Icon" style="width:228px;height:128px;"></a></td>
+        <td style="padding-left: 15px;"><a href="Ganges Galleria.html"><img src="Resources/Images/Stages/Icons/Ganges Galleria.png" alt="Ganges Galleria's Icon" style="width:228px;height:128px;"></a></td>
+        <td style="padding-left: 15px;"><a href="Takifugu Crossing.html"><img src="Resources/Images/Stages/Icons/Takifugu Crossing.png" alt="Takifugu Crossing's Icon" style="width:228px;height:128px;"></a></td>
       </tr>
       <tr>
         <td><a href="Glaucus Labs.html"><img src="Resources/Images/Stages/Icons/Glaucus Labs.png" alt="Glaucus Labs' Icon" style="width:228px;height:128px;"></a></td>
-        <td><a href="Corydoras Station.html"><img src="Resources/Images/Stages/Icons/Corydoras Station.png" alt="Corydoras Station's Icon" style="width:228px;height:128px;"></a></td>
-        <td><a href="Exocet Transport Ltd.html"><img src="Resources/Images/Stages/Icons/Exocet Transport Ltd.png" alt="Exocet Transport Ltd.'s Icon" style="width:228px;height:128px;"></a></td>
-        <td><a href="Silvergrey Circuit.html"><img src="Resources/Images/Stages/Icons/Silvergrey Circuit.png" alt="Silvergrey Circuit's Icon" style="width:228px;height:128px;"></a></td>
+        <td style="padding-left: 15px;"><a href="Corydoras Station.html"><img src="Resources/Images/Stages/Icons/Corydoras Station.png" alt="Corydoras Station's Icon" style="width:228px;height:128px;"></a></td>
+        <td style="padding-left: 15px;"><a href="Exocet Transport Ltd.html"><img src="Resources/Images/Stages/Icons/Exocet Transport Ltd.png" alt="Exocet Transport Ltd.'s Icon" style="width:228px;height:128px;"></a></td>
+        <td style="padding-left: 15px;"><a href="Silvergrey Circuit.html"><img src="Resources/Images/Stages/Icons/Silvergrey Circuit.png" alt="Silvergrey Circuit's Icon" style="width:228px;height:128px;"></a></td>
       </tr>
       <tr>
         <td><a href="Riftia Steelworks.html"><img src="Resources/Images/Stages/Icons/Riftia Steelworks.png" alt="Riftia Steelworks' Icon" style="width:228px;height:128px;"></a></td>
-        <td><a href="Thymal Stadium.html"><img src="Resources/Images/Stages/Icons/Thymal Stadium.png" alt="Thymal Stadium's Icon" style="width:228px;height:128px;"></a></td>
-        <td><a href="Barracuda Wasteland.html"><img src="Resources/Images/Stages/Icons/Barracuda Wasteland.png" alt="Barracuda Wasteland's Icon" style="width:228px;height:128px;"></a></td>
-        <td><a href="Tardigrade Landing.html"><img src="Resources/Images/Stages/Icons/Tardigrade Landing.png" alt="Tardigrade Landing's Icon" style="width:228px;height:128px;"></a></td>
+        <td style="padding-left: 15px;"><a href="Thymal Stadium.html"><img src="Resources/Images/Stages/Icons/Thymal Stadium.png" alt="Thymal Stadium's Icon" style="width:228px;height:128px;"></a></td>
+        <td style="padding-left: 15px;"><a href="Barracuda Wasteland.html"><img src="Resources/Images/Stages/Icons/Barracuda Wasteland.png" alt="Barracuda Wasteland's Icon" style="width:228px;height:128px;"></a></td>
+        <td style="padding-left: 15px;"><a href="Tardigrade Landing.html"><img src="Resources/Images/Stages/Icons/Tardigrade Landing.png" alt="Tardigrade Landing's Icon" style="width:228px;height:128px;"></a></td>
       </tr>
     </table>
   </div>
@@ -79,6 +218,214 @@
       } 
     });
   }
+
+  function twobjects() {
+    var x = document.getElementById("TWObjects");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function twrails() {
+    var x = document.getElementById("TWRails");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function twspawns() {
+    var x = document.getElementById("TWSpawns");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function szobjects() {
+    var x = document.getElementById("SZObjects");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function szrails() {
+    var x = document.getElementById("SZRails");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function szspawns() {
+    var x = document.getElementById("SZSpawns");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function szobjective() {
+    var x = document.getElementById("SZObjective");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function tcobjects() {
+    var x = document.getElementById("TCObjects");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function tcrails() {
+    var x = document.getElementById("TCRails");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function tcspawns() {
+    var x = document.getElementById("TCSpawns");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function tcobjective() {
+    var x = document.getElementById("TCObjective");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function rmobjects() {
+    var x = document.getElementById("RMObjects");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function rmrails() {
+    var x = document.getElementById("RMRails");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function rmspawns() {
+    var x = document.getElementById("RMSpawns");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function rmobjective() {
+    var x = document.getElementById("RMObjective");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function cbobjects() {
+    var x = document.getElementById("CBObjects");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function cbrails() {
+    var x = document.getElementById("CBRails");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function cbspawns() {
+    var x = document.getElementById("CBSpawns");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function cbobjective() {
+    var x = document.getElementById("CBObjective");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function ttwobjects() {
+    var x = document.getElementById("TTWObjects");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function ttwrails() {
+    var x = document.getElementById("TTWRails");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function ttwspawns() {
+    var x = document.getElementById("TTWSpawns");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function ttwobjective() {
+    var x = document.getElementById("TTWObjective");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+    
   </script>
     
   </body>
