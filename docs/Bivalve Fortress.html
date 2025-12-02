@@ -1,0 +1,85 @@
+<html>
+<head>
+  <link href='stylesheet.css' rel='stylesheet'>
+<style>
+  body {background-color: #636363;color: #000063;font-family: 'blissful_thinkingregular';font-size: 25px;text-align: center;}
+  img {width: 100%;}
+  video {width: 50%;}
+  .center {margin-left: auto;margin-right: auto;}
+  .collapsible {background-color: #000063;color: white;cursor: pointer;padding: 18px;width: 100%;border: none;text-align: center;outline: none;font-family:'cut_deepregular';font-size: 30px;}
+  .active, .collapsible:hover {background-color: #000031;}
+  .collapsible:after {content: '\002B';color: #313163;font-weight: bold;float: right;margin-left: 5px;}
+  .active:after {content: "\2212";}
+  .content {padding: 0 18px;max-height: 0;overflow: hidden;transition: max-height 0.2s ease-out;background-color: #313163;}
+  a:link {color: #F9C700;background-color: transparent;text-decoration: none;}
+  a:visited {color: #F9C700;background-color: transparent;text-decoration: none;}
+  a:hover {color: #000063;background-color: transparent;text-decoration: underline;}
+  a:active {color: #000063;background-color: transparent;text-decoration: underline;}
+  table{border: 3px #ffffff;border-radius: 10px;}
+</style>
+</head>
+<body>
+  
+  <h1 style="font-family:'cut_deepregular';font-size:100px;">Stage Name</h1>
+  <video fixed loop autoplay muted style="float:right;"><source src="Resources/Videos/Stages/[STAGE NAME] Overview.mp4" type="video/mp4"></video>
+  <p>this will eventually be the weapon's description</p>
+  <hr>
+  <p style="font-family:'cut_deepregular';font-size:50px;">Maps</p>
+  <table class="center" style="text-align:center;padding-left: 15px">
+    <tr>
+      <td><img src="Resources/Images/Stages/Minimaps/[STAGE NAME] Turf War Base.png" alt="[STAGE NAME]'s Turf War Layout" style="width:455px;"></td>
+      <td><img src="Resources/Images/Stages/Minimaps/[STAGE NAME] Splat Zones Base.png" alt="[STAGE NAME]'s Splat Zones Layout" style="width:455px;"></td>
+    </tr>
+    <tr>
+      <td><img src="Resources/Images/Stages/Minimaps/[STAGE NAME] Tower Control Base.png" alt="[STAGE NAME]'s Tower Control Layout" style="width:455px;"></td>
+      <td><img src="Resources/Images/Stages/Minimaps/[STAGE NAME] Rainmaker Base.png" alt="[STAGE NAME]'s Rainmaker Layout" style="width:455px;"></td>
+    </tr>
+    <tr>
+      <td><img src="Resources/Images/Stages/Minimaps/[STAGE NAME] Clam Blitz Base.png" alt="[STAGE NAME]'s Clam Blitz Layout" style="width:455px;"></td>
+      <td><img src="Resources/Images/Stages/Minimaps/[STAGE NAME] Tricolor Turf War Base.png" alt="[STAGE NAME]'s Tricolor Turf War Layout" style="width:455px;"></td>
+    </tr>
+  </table>
+
+  <button class="collapsible"><a href="Weapons.html">Stages</a></button>
+  <div class="content">
+    <table class="center" style="text-align:Center;padding-left: 15px;font-size: 30px;color:#636363;">
+      <tr>
+        <td><a href="Bivalve Fortress.html"><img src="Resources/Images/Stages/Icons/Bivalve Fortress.png" alt="Bivalve Fortress' Icon" style="width:228px;height:128px;"></a></td>
+        <td><a href="Coelacanth Castle.html"><img src="Resources/Images/Stages/Icons/Coelacanth Castle.png" alt="Coelacanth Castle's Icon" style="width:228px;height:128px;"></a></td>
+        <td><a href="Ganges Galleria.html"><img src="Resources/Images/Stages/Icons/Ganges Galleria.png" alt="Ganges Galleria's Icon" style="width:228px;height:128px;"></a></td>
+        <td><a href="Takifugu Crossing.html"><img src="Resources/Images/Stages/Icons/Takifugu Crossing.png" alt="Takifugu Crossing's Icon" style="width:228px;height:128px;"></a></td>
+      </tr>
+      <tr>
+        <td><a href="Glaucus Labs.html"><img src="Resources/Images/Stages/Icons/Glaucus Labs.png" alt="Glaucus Labs' Icon" style="width:228px;height:128px;"></a></td>
+        <td><a href="Corydoras Station.html"><img src="Resources/Images/Stages/Icons/Corydoras Station.png" alt="Corydoras Station's Icon" style="width:228px;height:128px;"></a></td>
+        <td><a href="Exocet Transport Ltd.html"><img src="Resources/Images/Stages/Icons/Exocet Transport Ltd.png" alt="Exocet Transport Ltd.'s Icon" style="width:228px;height:128px;"></a></td>
+        <td><a href="Silvergrey Circuit.html"><img src="Resources/Images/Stages/Icons/Silvergrey Circuit.png" alt="Silvergrey Circuit's Icon" style="width:228px;height:128px;"></a></td>
+      </tr>
+      <tr>
+        <td><a href="Riftia Steelworks.html"><img src="Resources/Images/Stages/Icons/Riftia Steelworks.png" alt="Riftia Steelworks' Icon" style="width:228px;height:128px;"></a></td>
+        <td><a href="Thymal Stadium.html"><img src="Resources/Images/Stages/Icons/Thymal Stadium.png" alt="Thymal Stadium's Icon" style="width:228px;height:128px;"></a></td>
+        <td><a href="Barracuda Wasteland.html"><img src="Resources/Images/Stages/Icons/Barracuda Wasteland.png" alt="Barracuda Wasteland's Icon" style="width:228px;height:128px;"></a></td>
+        <td><a href="Tardigrade Landing.html"><img src="Resources/Images/Stages/Icons/Tardigrade Landing.png" alt="Tardigrade Landing's Icon" style="width:228px;height:128px;"></a></td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } 
+    });
+  }
+  </script>
+    
+  </body>
+  </html>
