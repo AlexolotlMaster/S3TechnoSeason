@@ -8,6 +8,10 @@
   min-height: 100%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 @font-face {
     font-family: 'cut_deepregular';
     src: url('Resources/Fonts/Cut Deep/cut_deep-webfont.eot');
