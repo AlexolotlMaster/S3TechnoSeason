@@ -12,6 +12,21 @@
   .collapsible:after {content: '\002B';color: #313163;font-weight: bold;float: right;margin-left: 5px;}
   .active:after {content: "\2212";}
   .content {padding: 0 18px;max-height: 0;overflow: hidden;transition: max-height 0.2s ease-out;background-color: #313163;}
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+    'layout'
+    'maps'
+    'gallery'
+    'body'
+    'blank';
+    gap: 10px;
+  }
+  .layout {grid-area: main;}
+  .maps {grid-area: main;}
+  .gallery {grid-area: main;}
+  .body {grid-area: main;}
+  .blank {grid-area: main;}
   a:link {color: #F9C700;background-color: transparent;text-decoration: none;}
   a:visited {color: #F9C700;background-color: transparent;text-decoration: none;}
   a:hover {color: #000063;background-color: transparent;text-decoration: underline;}
@@ -21,64 +36,99 @@
   .button:hover {border:2px solid #000031;background-color:#000031;color:#f9c700;}
   @media screen and (min-width: 1000px) {.pad {padding-left:256}}
   @media screen and (max-width: 1000px) {.pad {padding-left:128}}
+  @media only screen and (min-width: 992px){
+    .layout {grid-area: 1 / span 4;}
+    .maps {grid-area: 2 / span 3;}
+    .gallery {grid-area: 1 / span 2;}
+    .body {grid-area: 3 / span 6;}
+    .blank {grid-area: 2 / span 2;}
+  }
 </style>
 </head>
 <body>
   
-  <h1 class="center" style="font-family:'cut_deepregular';font-size:100px;">Fortress</h1>
+  <h1 class="center" style="font-family:'cut_deepregular';font-size:100px;">Bivalve Fortress</h1>
   <video fixed loop autoplay muted style="float:right;"><source src="Resources/Videos/Stages/Bivalve Fortress Overview.mp4" type="video/mp4"></video>
   <p><b>Bivalve Fortress</b> is a multiplayer stage in the Techno Season. It takes place on and in front of an under construction sandcastle on the seafront. After 90 seconds, the water level rises, locking out the lower half of the stage.</p>
   <div style="font-family:'cut_deepregular';width:100%;border:2px solid #ffffff;border-style: none none solid none">
     <h2>Layout</h2>
   </div>
   <p style="font-family:'cut_deepregular';font-size:50px;">Maps</p>
-  <table class="center" style="text-align:center;">
-    <tr>
-      <td colspan='12'> <p style="font-family:'cut_deepregular';font-size:40px;">Turf War</p></td>
-      <td colspan='12' class="pad"> <p style="font-family:'cut_deepregular';font-size:40px;">Splat Zones</p></td>
-    </tr>
-    <tr>
-      <td colspan='12'>
-        <div style="position:relative;">
-          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Turf War Base.png" alt="Bivalve Fortress' Turf War Layout" style="width:455px;">
-        <div id="TWObjects" style="position:absolute;top:0px;z-index:1;display:none;">
-          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Turf War Objects.png" alt="Bivalve Fortress' Turf War Layout's Objects" style="width:455px;">
-        </div>
-        <div id="TWRails" style="position:absolute;top:0px;z-index:2;display:none;">
-          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Turf War Rails.png" alt="Bivalve Fortress' Turf War Layout's Inkrails" style="width:455px;">
-        </div>
-        <div id="TWSpawns" style="position:absolute;top:0px;z-index:3;display:none;">
-          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Turf War Spawns.png" alt="Bivalve Fortress' Turf War Layout's Spawns" style="width:455px;">
-        </div>
-        </div>
-      </td>
-      <td colspan='12' class="pad">
-        <div style="position:relative;">
-          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Splat Zones Base.png" alt="Bivalve Fortress' Splat Zones Layout" style="width:455px;">
-        <div id="SZObjects" style="position:absolute;top:0px;z-index:1;display:none;">
-          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Splat Zones Objects.png" alt="Bivalve Fortress' Splat Zones Layout's Objects" style="width:455px;">
-        </div>
-        <div id="SZRails" style="position:absolute;top:0px;z-index:2;display:none;">
-          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Splat Zones Rails.png" alt="Bivalve Fortress' Splat Zones Layout's Inkrails" style="width:455px;">
-        </div>
-        <div id="SZSpawns" style="position:absolute;top:0px;z-index:3;display:none;">
-          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Splat Zones Spawns.png" alt="Bivalve Fortress' Splat Zones Layout's Spawns" style="width:455px;">
-        </div>
-        <div id="SZObjective" style="position:absolute;top:0px;z-index:4;display:none;">
-          <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Splat Zones Objective.png" alt="Bivalve Fortress' Splat Zones Layout's Objective" style="width:455px;">
-        </div>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td colspan='4'><button class="button" onclick="twobjects()">Toggle<br>Objects</button></td>
-      <td colspan='4'><button class="button" onclick="twrails()">Toggle<br>Inkrails</button></td>
-      <td colspan='4'><button class="button" onclick="twspawns()">Toggle<br>Spawns</button></td>
-      <td colspan='3' class="pad"><button class="button" onclick="szobjects()">Toggle<br>Objects</button></td>
-      <td colspan='3'><button class="button" onclick="szrails()">Toggle<br>Inkrails</button></td>
-      <td colspan='3'><button class="button" onclick="szspawns()">Toggle<br>Spawns</button></td>
-      <td colspan='3'><button class="button" onclick="szobjective()">Toggle<br>Objective</button></td>
-    </tr>
+  <div class="blank">
+    <table>
+      <tr>
+          <td><img src="Resources/Images/Stages/Blank/Bivalve Fortress.png" alt="Bivalve Fortress' Blank" style="height:auto;"></td>
+      </tr>
+    </table>
+  </div>
+  <div class="maps">
+    <table class="center" style="text-align:center;">
+      <tr>
+        <td colspan='12'> <p style="font-family:'cut_deepregular';font-size:40px;">Turf War</p></td>
+      </tr>
+      <tr>
+        <td colspan='12'>
+          <div style="position:relative;">
+            <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Turf War Base.png" alt="Bivalve Fortress' Turf War Layout" style="height:auto;">
+          <div id="TWObjects" style="position:absolute;top:0px;z-index:1;display:none;">
+            <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Turf War Objects.png" alt="Bivalve Fortress' Turf War Layout's Objects" style="height:auto;">
+          </div>
+          <div id="TWRails" style="position:absolute;top:0px;z-index:2;display:none;">
+            <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Turf War Rails.png" alt="Bivalve Fortress' Turf War Layout's Inkrails" style="height:auto;">
+          </div>
+          <div id="TWSpawns" style="position:absolute;top:0px;z-index:3;display:none;">
+            <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Turf War Spawns.png" alt="Bivalve Fortress' Turf War Layout's Spawns" style="height:auto;">
+          </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan='4'><button class="button" onclick="twobjects()">Toggle<br>Objects</button></td>
+        <td colspan='4'><button class="button" onclick="twrails()">Toggle<br>Inkrails</button></td>
+        <td colspan='4'><button class="button" onclick="twspawns()">Toggle<br>Spawns</button></td>
+      </tr>
+    </table>
+  </div>
+  <div class="blank">
+    <table>
+      <tr>
+          <td><img src="Resources/Images/Stages/Blank/Bivalve Fortress.png" alt="Bivalve Fortress' Blank" style="height:auto;"></td>
+      </tr>
+    </table>
+  </div>
+  <div class="maps">
+    <table class="center" style="text-align:center;">
+      <tr>
+        <td colspan='12'> <p style="font-family:'cut_deepregular';font-size:40px;">Splat Zones</p></td>
+      </tr>
+      <tr>
+        <td colspan='12'>
+          <div style="position:relative;">
+            <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Splat Zones Base.png" alt="Bivalve Fortress' Splat Zones Layout" style="width:455px;">
+          <div id="SZObjects" style="position:absolute;top:0px;z-index:1;display:none;">
+            <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Splat Zones Objects.png" alt="Bivalve Fortress' Splat Zones Layout's Objects" style="width:455px;">
+          </div>
+          <div id="SZRails" style="position:absolute;top:0px;z-index:2;display:none;">
+            <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Splat Zones Rails.png" alt="Bivalve Fortress' Splat Zones Layout's Inkrails" style="width:455px;">
+          </div>
+          <div id="SZSpawns" style="position:absolute;top:0px;z-index:3;display:none;">
+            <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Splat Zones Spawns.png" alt="Bivalve Fortress' Splat Zones Layout's Spawns" style="width:455px;">
+          </div>
+          <div id="SZObjective" style="position:absolute;top:0px;z-index:4;display:none;">
+            <img src="Resources/Images/Stages/Minimaps/Bivalve Fortress/Bivalve Fortress Splat Zones Objective.png" alt="Bivalve Fortress' Splat Zones Layout's Objective" style="width:455px;">
+          </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan='3'><button class="button" onclick="szobjects()">Toggle<br>Objects</button></td>
+        <td colspan='3'><button class="button" onclick="szrails()">Toggle<br>Inkrails</button></td>
+        <td colspan='3'><button class="button" onclick="szspawns()">Toggle<br>Spawns</button></td>
+        <td colspan='3'><button class="button" onclick="szobjective()">Toggle<br>Objective</button></td>
+      </tr>
+    </table>
+  </div>
+  <table>
     <tr>
       <td colspan='12' style="padding-top:64"> <p style="font-family:'cut_deepregular';font-size:40px;">Tower Control</p></td>
       <td colspan='12' class="pad" style="padding-top:64"> <p style="font-family:'cut_deepregular';font-size:40px;">Rainmaker</p></td>
