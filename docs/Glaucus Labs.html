@@ -25,7 +25,7 @@
 </head>
 <body>
   
-  <h1 class="center" style="font-family:'cut_deepregular';font-size:100px;">Glaucus</h1>
+  <h1 class="center" style="font-family:'cut_deepregular';font-size:100px;">Glaucus Labs</h1>
   <video fixed loop autoplay muted style="float:right;"><source src="Resources/Videos/Stages/Glaucus Labs Overview.mp4" type="video/mp4"></video>
   <p>this will eventually be the stage's description</p>
   <hr>
@@ -81,8 +81,8 @@
     </tr>
     <tr>
       <td colspan='5'><button class="button" onclick="twobjects()">Toggle<br>Objects</button></td>
-      <td colspan='5'><button class="button" onclick="twupper()">Toggle<br>Top Floors</button></td>
       <td colspan='5'><button class="button" onclick="twspawns()">Toggle<br>Spawns</button></td>
+      <td colspan='5'><button class="button" onclick="twupper()">Toggle<br>Top Floors</button></td>
       <td colspan='5'><button class="button" onclick="twbulkheads()">Move<br>Bulkheads</button></td>
       <td colspan='5' class="pad"><button class="button" onclick="szobjects()">Toggle<br>Objects</button></td>
       <td colspan='5'><button class="button" onclick="szrails()">Toggle<br>Inkrails</button></td>
@@ -248,10 +248,10 @@
 
   function twupper() {
     var x = document.getElementById("TWUpper");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } else {
+    if (x.style.display === "none") {
       x.style.display = "block";
+    } else {
+      x.style.display = "none";
     }
   }
 
