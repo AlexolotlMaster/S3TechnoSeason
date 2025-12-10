@@ -32,21 +32,32 @@
   <p style="font-family:'cut_deepregular';font-size:50px;">Maps</p>
   <table class="center" style="text-align:center;">
     <tr>
-      <td colspan='12'> <p style="font-family:'cut_deepregular';font-size:40px;">Turf War</p></td>
+      <td colspan='20'> <p style="font-family:'cut_deepregular';font-size:40px;">Turf War</p></td>
       <td colspan='12' class="pad"> <p style="font-family:'cut_deepregular';font-size:40px;">Splat Zones</p></td>
     </tr>
     <tr>
-      <td colspan='12'>
+      <td colspan='20'>
         <div style="position:relative;">
-          <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Turf War Base.png" alt="Glaucus Labs' Turf War Layout" style="width:455px;">
-        <div id="TWObjects" style="position:absolute;top:0px;z-index:1;display:none;">
-          <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Turf War Objects.png" alt="Glaucus Labs' Turf War Layout's Objects" style="width:455px;">
+          <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Turf War Base Lower.png" alt="Glaucus Labs' Turf War Layout" style="width:455px;">
+        <div id="TWObjectsLower" style="position:absolute;top:0px;z-index:1;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Turf War Objects Lower.png" alt="Glaucus Labs' Turf War Layout's Objects" style="width:455px;">
         </div>
-        <div id="TWRails" style="position:absolute;top:0px;z-index:2;display:none;">
-          <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Turf War Rails.png" alt="Glaucus Labs' Turf War Layout's Inkrails" style="width:455px;">
+        <div id="TWBulkheadsLower" style="position:absolute;top:0px;z-index:2;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Turf War Bulkheads Lower.png" alt="Glaucus Labs' Turf War Layout's Bulkheads" style="width:455px;">
         </div>
-        <div id="TWSpawns" style="position:absolute;top:0px;z-index:3;display:none;">
-          <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Turf War Spawns.png" alt="Glaucus Labs' Turf War Layout's Spawns" style="width:455px;">
+        <div id="TWUpper" style="position:absolute;top:0px;">
+          <div style="position:absolute;top:0px;z-index:3;display:none;">
+            <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Turf War Base.png" alt="Glaucus Labs' Turf War Layout" style="width:455px;">
+          </div>
+          <div id="TWObjectsUpper" style="position:absolute;top:0px;z-index:4;display:none;">
+            <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Turf War Objects Upper.png" alt="Glaucus Labs' Turf War Layout's Objects" style="width:455px;">
+          </div>
+          <div id="TWBulkheadsUpper" style="position:absolute;top:0px;z-index:5;display:block;">
+            <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Turf War Bulkheads Upper.png" alt="Glaucus Labs' Turf War Layout's Bulkheads" style="width:455px;">
+          </div>
+          <div id="TWSpawns" style="position:absolute;top:0px;z-index:6;display:none;">
+            <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Turf War Spawns.png" alt="Glaucus Labs' Turf War Layout's Spawns" style="width:455px;">
+          </div>
         </div>
         </div>
       </td>
@@ -69,9 +80,10 @@
       </td>
     </tr>
     <tr>
-      <td colspan='4'><button class="button" onclick="twobjects()">Toggle<br>Objects</button></td>
-      <td colspan='4'><button class="button" onclick="twrails()">Toggle<br>Inkrails</button></td>
-      <td colspan='4'><button class="button" onclick="twspawns()">Toggle<br>Spawns</button></td>
+      <td colspan='5'><button class="button" onclick="twobjects()">Toggle<br>Objects</button></td>
+      <td colspan='5'><button class="button" onclick="twupper()">Toggle<br>Upper Floor</button></td>
+      <td colspan='5'><button class="button" onclick="twspawns()">Toggle<br>Spawns</button></td>
+      <td colspan='5'><button class="button" onclick="twbulkheads()">Move<br>Bulkheads</button></td>
       <td colspan='3' class="pad"><button class="button" onclick="szobjects()">Toggle<br>Objects</button></td>
       <td colspan='3'><button class="button" onclick="szrails()">Toggle<br>Inkrails</button></td>
       <td colspan='3'><button class="button" onclick="szspawns()">Toggle<br>Spawns</button></td>
@@ -220,7 +232,13 @@
   }
 
   function twobjects() {
-    var x = document.getElementById("TWObjects");
+    var x = document.getElementById("TWObjectsUpper");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+    var x = document.getElementById("TWObjectsLower");
     if (x.style.display === "block") {
       x.style.display = "none";
     } else {
@@ -228,8 +246,8 @@
     }
   }
 
-  function twrails() {
-    var x = document.getElementById("TWRails");
+  function twupper() {
+    var x = document.getElementById("TWUpper");
     if (x.style.display === "block") {
       x.style.display = "none";
     } else {
@@ -239,6 +257,21 @@
 
   function twspawns() {
     var x = document.getElementById("TWSpawns");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function twbulkheads() {
+    var x = document.getElementById("TWBulkheadsUpper");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+    var x = document.getElementById("TWBulkheadsLower");
     if (x.style.display === "block") {
       x.style.display = "none";
     } else {
