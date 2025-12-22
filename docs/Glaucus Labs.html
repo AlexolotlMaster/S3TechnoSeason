@@ -61,20 +61,34 @@
         </div>
         </div>
       </td>
-      <td colspan='20' class="pad">
+      <td colspan='20' class='pad'>
         <div style="position:relative;">
-          <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Splat Zones Base.png" alt="Glaucus Labs' Splat Zones Layout" style="width:455px;">
-        <div id="SZObjects" style="position:absolute;top:0px;z-index:1;display:none;">
-          <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Splat Zones Objects.png" alt="Glaucus Labs' Splat Zones Layout's Objects" style="width:455px;">
+          <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Splat Zones Base Lower.png" alt="Glaucus Labs' Splat Zones Layout" style="width:455px;">
+        <div id="SZObjectsLower" style="position:absolute;top:0px;z-index:1;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Splat Zones Objects Lower.png" alt="Glaucus Labs' Splat Zones Layout's Objects" style="width:455px;">
         </div>
-        <div id="SZRails" style="position:absolute;top:0px;z-index:2;display:none;">
-          <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Splat Zones Rails.png" alt="Glaucus Labs' Splat Zones Layout's Inkrails" style="width:455px;">
+        <div id="SZBulkheadsLower" style="position:absolute;top:0px;z-index:2;display:none;">
+          <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Splat Zones Bulkheads Lower.png" alt="Glaucus Labs' Splat Zones Layout's Bulkheads" style="width:455px;">
         </div>
-        <div id="SZSpawns" style="position:absolute;top:0px;z-index:3;display:none;">
-          <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Splat Zones Spawns.png" alt="Glaucus Labs' Splat Zones Layout's Spawns" style="width:455px;">
-        </div>
-        <div id="SZObjective" style="position:absolute;top:0px;z-index:4;display:none;">
-          <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Splat Zones Objective.png" alt="Glaucus Labs' Splat Zones Layout's Objective" style="width:455px;">
+        <div id="SZUpper">
+          <div style="position:absolute;top:0px;z-index:3;">
+            <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Splat Zones Base.png" alt="Glaucus Labs' Splat Zones Layout" style="width:455px;">
+          </div>
+          <div id="SZObjectsUpper" style="position:absolute;top:0px;z-index:4;display:none;">
+            <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Splat Zones Objects Upper.png" alt="Glaucus Labs' Splat Zones Layout's Objects" style="width:455px;">
+          </div>
+          <div id="SZBulkheadsUpper" style="position:absolute;top:0px;z-index:5;display:block;">
+            <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Splat Zones Bulkheads Upper.png" alt="Glaucus Labs' Splat Zones Layout's Bulkheads" style="width:455px;">
+          </div>
+          <div id="SZSpawns" style="position:absolute;top:0px;z-index:6;display:none;">
+            <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Splat Zones Spawns.png" alt="Glaucus Labs' Splat Zones Layout's Spawns" style="width:455px;">
+          </div>
+          <div id="SZObjective" style="position:absolute;top:0px;z-index:7;display:none;">
+            <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Glaucus Labs Splat Zones Objective.png" alt="Glaucus Labs' Splat Zones Layout's Objective" style="width:455px;">
+          </div>
+          <div id="SZObjective" style="position:absolute;top:0px;z-index:8;display:none;">
+            <img src="Resources/Images/Stages/Minimaps/Glaucus Labs/Splat Zones Block.png" alt="Glaucus Labs' Splat Zones Layout's Objective's Overlay" style="width:455px;">
+          </div>
         </div>
         </div>
       </td>
@@ -84,10 +98,11 @@
       <td colspan='5'><button class="button" onclick="twspawns()">Toggle<br>Spawns</button></td>
       <td colspan='5'><button class="button" onclick="twupper()">Toggle<br>Top Floors</button></td>
       <td colspan='5'><button class="button" onclick="twbulkheads()">Move<br>Bulkheads</button></td>
-      <td colspan='5' class="pad"><button class="button" onclick="szobjects()">Toggle<br>Objects</button></td>
-      <td colspan='5'><button class="button" onclick="szrails()">Toggle<br>Inkrails</button></td>
-      <td colspan='5'><button class="button" onclick="szspawns()">Toggle<br>Spawns</button></td>
-      <td colspan='5'><button class="button" onclick="szobjective()">Toggle<br>Objective</button></td>
+      <td colspan='4' class="pad"><button class="button" onclick="szobjects()">Toggle<br>Objects</button></td>
+      <td colspan='4'><button class="button" onclick="szspawns()">Toggle<br>Spawns</button></td>
+      <td colspan='4'><button class="button" onclick="szobjective()">Toggle<br>Objective</button></td>
+      <td colspan='4'><button class="button" onclick="szupper()">Toggle<br>Top Floors</button></td>
+      <td colspan='4'><button class="button" onclick="szbulkheads()">Move<br>Bulkheads</button></td>
     </tr>
     <tr>
       <td colspan='20' style="padding-top:64"> <p style="font-family:'cut_deepregular';font-size:40px;">Tower Control</p></td>
@@ -280,7 +295,13 @@
   }
 
   function szobjects() {
-    var x = document.getElementById("SZObjects");
+    var x = document.getElementById("SZObjectsUpper");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+    var x = document.getElementById("SZObjectsLower");
     if (x.style.display === "block") {
       x.style.display = "none";
     } else {
@@ -288,8 +309,8 @@
     }
   }
 
-  function szrails() {
-    var x = document.getElementById("SZRails");
+  function szupper() {
+    var x = document.getElementById("SZUpper");
     if (x.style.display === "block") {
       x.style.display = "none";
     } else {
@@ -308,6 +329,21 @@
 
   function szobjective() {
     var x = document.getElementById("SZObjective");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  function szbulkheads() {
+    var x = document.getElementById("SZBulkheadsUpper");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+    var x = document.getElementById("SZBulkheadsLower");
     if (x.style.display === "block") {
       x.style.display = "none";
     } else {
